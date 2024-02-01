@@ -1,0 +1,48 @@
+{
+    "name": "charonlab/charon-cache",
+    "description": "An Implementation of caching system based on the PSR-6 & PSR-16 standard.",
+    "license": "MIT",
+    "type": "library",
+    "provide": {
+        "psr/cache-implementation": "1.0",
+        "psr/simple-cache-implementation": "1.0"
+    },
+    "require": {
+        "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
+        "psr/cache": "dev-master",
+        "psr/simple-cache": "dev-master"
+    },
+    "require-dev": {
+        "charonlab/coding-standard": "1.2.x-dev",
+        "phpunit/phpunit": "10.5.x-dev",
+        "vimeo/psalm": "6.x-dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Charon\\Cache\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Charon\\Tests\\Unit\\": "tests/unit/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.2.15"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint-check": "phpcs",
+        "lint-fix": "phpcbf",
+        "static-analysis": "psalm --shepherd --stats",
+        "test": "phpunit --colors=always"
+    }
+}

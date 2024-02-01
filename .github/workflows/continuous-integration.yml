@@ -1,0 +1,61 @@
+name: "Continuous Integration"
+
+on:
+  pull_request:
+    branches:
+      - "*.x"
+    paths:
+      - .github/workflows/continuous-integration.yml
+      - composer.*
+      - src/**
+      - tests/**
+      - phpunit.xml.dist
+  push:
+    branches:
+      - "*.x"
+    paths:
+      - .github/workflows/continuous-integration.yml
+      - composer.*
+      - src/**
+      - tests/**
+      - phpunit.xml.dist
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  fail-fast: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        php-versions: [ '8.2', '8.3' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          php-version: '8.2'
+          tools: cs2pr
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Coding standards
+        run: "composer run lint-check -- -q --no-colors --report=checkstyle | cs2pr"
+
+      - name: Static Analysis
+        run: "composer run static-analysis"
+
+      - name: PHPUnit tests
+        run: "composer run test"
