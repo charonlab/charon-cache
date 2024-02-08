@@ -15,7 +15,7 @@
 
     <testsuites>
         <testsuite name="unit test">
-            <directory>./tests/unit</directory>
+            <directory>./src/Adapter/*/Tests</directory>
         </testsuite>
     </testsuites>
 

@@ -13,7 +13,6 @@
 
     <!-- Paths to check -->
     <file>src</file>
-    <file>tests</file>
 
     <!-- Include all rules from the Charon Coding Standard -->
     <rule ref="Charon"/>
