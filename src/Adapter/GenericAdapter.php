@@ -27,7 +27,7 @@ abstract class GenericAdapter implements CacheItemPool
     protected array $deferred = [];
 
     public function __construct() {
-        self::$createCacheItem ??= \Closure::bind(
+        self::$createCacheItem = \Closure::bind(
             static function (string $key, mixed $value, bool $isHit) {
                 return new CacheItem($key, $isHit, $value);
             },

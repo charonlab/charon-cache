@@ -24,6 +24,9 @@ class ArrayAdapterTest extends TestCase
         $adapter = new ArrayAdapter();
         $adapter->set('foo', 'bar');
 
-        $this->assertEquals('bar', $adapter->get('foo')->get());
+        $this->assertEquals(
+            'bar',
+            $adapter->get('foo')->get()
+        );
     }
 }
