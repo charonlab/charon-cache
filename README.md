@@ -1,17 +1,25 @@
-# charonlab/charon-cache
+## charon/charon-cache
 
-[![Build Status](https://github.com/charonlab/charon-cache/workflows/Continuous%20Integration/badge.svg)](https://github.com/charonlab/charon-cache/actions?query=workflow%3A"Continuous+Integration")
-
-An Implementation of caching system based on the PSR-6 & PSR-16 standard.
+Caching implementation based on the PSR-6 & PSR-16 standard.
 
 ## Installation
 
-Run the following to install this library:
+It's recommended that you use Composer to install:
 
 ```bash
 $ composer require charonlab/charon-cache
 ```
 
+## Documentation
+
+Documentation is at [docs](docs/index.md)
+
 ## Support
 
 - [Issues](https://github.com/charonlab/charon-cache/issues/)
+
+## License
+
+The charon-db is open-sourced software licensed under the [MIT](LICENSE.md)
+
+

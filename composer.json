@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "charonlab/coding-standard": "1.2.x-dev",
-        "phpunit/phpunit": "10.5.x-dev",
+        "phpunit/phpunit": "11.0.3",
         "vimeo/psalm": "6.x-dev"
     },
     "minimum-stability": "dev",
@@ -25,15 +25,10 @@
             "Charon\\Cache\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Charon\\Tests\\Unit\\": "tests/unit/"
-        }
-    },
     "config": {
         "optimize-autoloader": true,
         "platform": {
-            "php": "8.2.15"
+            "php": "8.2.16"
         },
         "sort-packages": true,
         "allow-plugins": {

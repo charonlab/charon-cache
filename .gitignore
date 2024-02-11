@@ -1,23 +1,28 @@
+# macos
 .DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
 ./Icon?
+
+# windows
 ehthumbs.db
 Thumbs.db
 
+# ide
 /.idea/
 /.fleet/
+/.run/
 
+#composer
 composer.lock
 /composer.phar
 /auth.json
 /vendor/*
 
+# qa tools
 .phpunit.cache/
 phpunit.xml
-.phpstan.cache/
-phpstan.neon
 .phpcs-cache
 phpcs.xml
