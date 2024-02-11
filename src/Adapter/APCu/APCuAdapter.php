@@ -28,8 +28,7 @@ class APCuAdapter extends GenericAdapter
     /**
      * @inheritDoc
      */
-    protected function doSave(CacheItem $item): array|bool
-    {
+    protected function doSave(CacheItem $item): array|bool {
         $entry = [
             'data' => $item->get(),
             'ttl' => $item->getExpirationTime()
@@ -45,8 +44,7 @@ class APCuAdapter extends GenericAdapter
     /**
      * @inheritDoc
      */
-    protected function doFetch(array $keys): iterable
-    {
+    protected function doFetch(array $keys): iterable {
         $ok = false;
         $values = [];
 
@@ -64,30 +62,26 @@ class APCuAdapter extends GenericAdapter
         }
 
         return $values;
-
     }
 
     /**
      * @inheritDoc
      */
-    protected function doDelete(array $keys): bool
-    {
+    protected function doDelete(array $keys): bool {
         return (bool) \apcu_delete($keys);
     }
 
     /**
      * @inheritDoc
      */
-    protected function doHave(string $key): bool
-    {
+    protected function doHave(string $key): bool {
         return \apcu_exists($key);
     }
 
     /**
      * @inheritDoc
      */
-    protected function doClear(): bool
-    {
+    protected function doClear(): bool {
         return \apcu_clear_cache();
     }
 }
