@@ -1,4 +1,4 @@
-## charon/charon-cache
+## charonlab/charon-cache
 
 Caching implementation based on the PSR-6 & PSR-16 standard.
 
@@ -20,6 +20,6 @@ Documentation is at [docs](docs/index.md)
 
 ## License
 
-The charon-db is open-sourced software licensed under the [MIT](LICENSE.md)
+The charon-cache is open-sourced software licensed under the [MIT](LICENSE.md)
 
 
