@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "charonlab/coding-standard": "1.2.x-dev",
-        "phpunit/phpunit": "11.0.3",
+        "phpunit/phpunit": "11.0.4",
         "vimeo/psalm": "6.x-dev"
     },
     "minimum-stability": "dev",
